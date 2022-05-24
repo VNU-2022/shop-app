@@ -52,9 +52,9 @@
         <div class="header-middle"><!--header-middle-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="display: flex; align-items: center">
                         <div class="logo pull-left">
-                            <a href="{{url('/')}}"><img src="{{asset('frontend/images/logo.png')}}" alt="" /></a>
+                            <a href="{{url('/')}}"><img src="{{asset('frontend/images/logo_2.jpg')}}" alt="" style="width: 20%" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -299,7 +299,7 @@
                     @foreach($contact_footer as $key => $logo)
                     <div class="col-sm-3">
                         <div class="companyinfo">
-                            <p><img width="100%" src="{{asset('uploads/contact/'.$logo->info_logo)}}"></p>
+                            <p><img width="40%" src="{{asset('uploads/contact/'.$logo->info_logo)}}"></p>
                             <p>{{$logo->slogan_logo}}</p>
                         </div>
                     </div>
@@ -337,15 +337,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="single-widget">
-                            <h2>Fanpage</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li>  {!!$contact_foo->info_fanpage!!}</li>
-                               
-                            </ul>
-                        </div>
-                    </div>
                     @endforeach
                     <div class="col-sm-3 col-sm-offset-1">
                         <div class="single-widget">
@@ -365,7 +356,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <p class="pull-left">Copyright © 2021 ShopHieu.com</p>
+                    <p class="pull-left">Copyright © E-shopper</p>
                   
                 </div>
             </div>

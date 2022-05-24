@@ -46,7 +46,7 @@ class VideoController extends Controller
     			$get_name_image = $get_image->getClientOriginalName();
 	            $name_image = current(explode('.',$get_name_image));
 	            $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-	            $get_image->move('public/uploads/videos',$new_image);
+	            $get_image->move('uploads/videos',$new_image);
 	           	$video->video_image = $new_image;
     	}
     	$video->save();
@@ -57,7 +57,7 @@ class VideoController extends Controller
 
     	$video = Video::find($video_id);
 
-	    unlink('public/uploads/videos/'.$video->video_image);
+	    unlink('uploads/videos/'.$video->video_image);
 
     	$video->delete();
     }
@@ -96,11 +96,11 @@ class VideoController extends Controller
     	$video_id = $request->video_id;
     	if($get_image){
     			$video = Video::find($video_id);
-	           	unlink('public/uploads/videos/'.$video->video_image);
+	           	unlink('uploads/videos/'.$video->video_image);
     			$get_name_image = $get_image->getClientOriginalName();
 	            $name_image = current(explode('.',$get_name_image));
 	            $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-	            $get_image->move('public/uploads/videos',$new_image);
+	            $get_image->move('uploads/videos',$new_image);
 	            $video->video_image = $new_image;
 	           	$video->save(); 
     		
@@ -141,7 +141,7 @@ class VideoController extends Controller
 			           <td contenteditable data-video_id="'.$vid->video_id.'" data-video_type="video_slug" class="video_edit" id="video_slug_'.$vid->video_id.'">'.$vid->video_slug.'</td>
 
 			      		<td>
-			      		<img src="'.url('public/uploads/videos/'.$vid->video_image).'" class="img-thumbnail" width="80" height="80">
+			      		<img src="'.url('uploads/videos/'.$vid->video_image).'" class="img-thumbnail" width="80" height="80">
 
 			      		 <input type="file" class="file_img_video" data-video_id="'.$vid->video_id.'" id="file-video-'.$vid->video_id.'" name="file" accept="image/*" />
 

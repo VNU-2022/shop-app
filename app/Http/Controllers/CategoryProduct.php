@@ -20,13 +20,13 @@ session_start();
 
 class CategoryProduct extends Controller
 {
-    public function __construct(){
+    // public function __construct(){
 
-        $this->middleware('permission:add category',['only'=> ['add_category_product','save_category_product']]);
-        $this->middleware('permission:edit category',['only'=> ['edit_category_product','update_category_product']]);
-        $this->middleware('permission:delete category',['only'=> ['delete_category_product']]);
-       $this->middleware('permission:list category',['only'=> ['all_category_product']]);
-    }
+    //     $this->middleware('permission:add category',['only'=> ['add_category_product','save_category_product']]);
+    //     $this->middleware('permission:edit category',['only'=> ['edit_category_product','update_category_product']]);
+    //     $this->middleware('permission:delete category',['only'=> ['delete_category_product']]);
+    //    $this->middleware('permission:list category',['only'=> ['all_category_product']]);
+    // }
      public function AuthLogin(){
         
         if(Session::get('login_normal')){

@@ -33,13 +33,6 @@
           <div id="tabs_product"></div>
 
       </div>
-
-
-      <h2 class="title text-center">Sản phẩm mới nhất</h2>
-
-      <div id="all_product"></div>    
-          
-      <div id="cart_session"></div>
   </div><!--features_items-->
 
   <style type="text/css">

@@ -71,7 +71,7 @@
 									</select>
 								</div>
 							</div>
-							<input type="button" value="Xác nhận đơn hàng" name="send_order" class="btn btn-primary btn-sm send_order">
+							{{-- <input type="button" value="Xác nhận đơn hàng" name="send_order" class="btn btn-primary btn-sm send_order"> --}}
 						</form>
 					</div>
 					<div class="col-md-6">	
@@ -275,7 +275,8 @@
 													\Session::put('total_payment',$total_paypal);
 												@endphp
 												{{-- <div id="paypal-button"></div> --}}
-												<a class="btn btn-primary m-3" href="{{ route('processTransaction') }}">Thanh toán Paypal ${{round($vnd_to_usd,2)}}</a>
+												{{-- <a class="btn btn-primary m-3" href="{{ route('processTransaction') }}">Thanh toán Paypal ${{round($vnd_to_usd,2)}}</a> --}}
+												<input type="button" value="Xác nhận đơn hàng" name="send_order" class="btn btn-primary btn-sm send_order">
 												@endif
 												{{-- <input type="hidden" id="vnd_to_usd" value="{{round($vnd_to_usd,2)}}"> --}}
 											</div>	

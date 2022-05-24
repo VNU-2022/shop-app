@@ -76,7 +76,7 @@
               @if($extension=='pdf')
               <td><a target="_blank" href="{{asset('uploads/document/'.$pro->product_file)}}">Xem file</a></td>
               @elseif($extension=='docx')
-              <td><a target="_blank" href="https://view.officeapps.live.com/op/view.aspx?src={{ url('public/uploads/document/'.$pro->product_file) }}">Xem file</a></td>
+              <td><a target="_blank" href="https://view.officeapps.live.com/op/view.aspx?src={{ url('uploads/document/'.$pro->product_file) }}">Xem file</a></td>
               @endif
             @else 
             <td>Không file</td>
@@ -86,7 +86,7 @@
             <td>{{ $pro->product_slug }}</td>
             <td>{{ number_format($pro->product_price,0,',','.') }}đ</td>
             <td>{{ number_format($pro->price_cost,0,',','.') }}đ</td>
-            <td><img src="public/uploads/product/{{ $pro->product_image }}" height="100" width="100"></td>
+            <td><img src="uploads/product/{{ $pro->product_image }}" height="100" width="100"></td>
             <td>{{ $pro->category_name }}</td>
             <td>{{ $pro->brand_name }}</td>
 

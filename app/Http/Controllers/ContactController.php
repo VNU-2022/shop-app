@@ -22,7 +22,7 @@ class ContactController extends Controller
         $link = $data['link'];
         $get_image = $request->file('file');
       
-        $path = 'public/uploads/icons/';
+        $path = 'uploads/icons/';
       
         //them hinh anh
         if($get_image){
@@ -48,7 +48,7 @@ class ContactController extends Controller
         $link = $data['link'];
         $get_image = $request->file('file');
       
-        $path = 'public/uploads/icons/';
+        $path = 'uploads/icons/';
       
         //them hinh anh
         if($get_image){
@@ -165,7 +165,7 @@ class ContactController extends Controller
     	$contact->info_map = $data['info_map'];
     	$contact->info_fanpage = $data['info_fanpage'];	
     	$get_image = $request->file('info_image');
-    	$path = 'public/uploads/contact/';
+    	$path = 'uploads/contact/';
     	if($get_image){
     		unlink($path.$contact->info_logo);
     		$get_name_image = $get_image->getClientOriginalName();
@@ -185,7 +185,7 @@ class ContactController extends Controller
     	$contact->info_map = $data['info_map'];
     	$contact->info_fanpage = $data['info_fanpage'];	
     	$get_image = $request->file('info_image');
-    	$path = 'public/uploads/contact/';
+    	$path = 'uploads/contact/';
     	if($get_image){
     		$get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));

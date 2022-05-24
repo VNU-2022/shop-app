@@ -47,7 +47,7 @@ class GalleryController extends Controller
     			$get_name_image = $image->getClientOriginalName();
 	            $name_image = current(explode('.',$get_name_image));
 	            $new_image =  $name_image.rand(0,99).'.'.$image->getClientOriginalExtension();
-	            $image->move('public/uploads/gallery',$new_image);
+	            $image->move('uploads/gallery',$new_image);
 	           	$gallery = new Gallery();
 	           	$gallery->gallery_name = $new_image;
 	           	$gallery->gallery_image = $new_image;
@@ -62,7 +62,7 @@ class GalleryController extends Controller
     public function delete_gallery(Request $request){
     	$gal_id = $request->gal_id;
     	$gallery = Gallery::find($gal_id);
-	    unlink('public/uploads/gallery/'.$gallery->gallery_image);
+	    unlink('uploads/gallery/'.$gallery->gallery_image);
 	    $gallery->delete();
     }
     public function update_gallery(Request $request){
@@ -70,11 +70,11 @@ class GalleryController extends Controller
     	$gal_id = $request->gal_id;
     	if($get_image){
     			$gallery = Gallery::find($gal_id);
-	           	unlink('public/uploads/gallery/'.$gallery->gallery_image);
+	           	unlink('uploads/gallery/'.$gallery->gallery_image);
     			$get_name_image = $get_image->getClientOriginalName();
 	            $name_image = current(explode('.',$get_name_image));
 	            $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-	            $get_image->move('public/uploads/gallery',$new_image);
+	            $get_image->move('uploads/gallery',$new_image);
 	            $gallery->gallery_image = $new_image;
 	           	$gallery->save(); 
     		
@@ -110,7 +110,7 @@ class GalleryController extends Controller
                                         <td contenteditable class="edit_gal_name" data-gal_id="'.$gal->gallery_id.'">'.$gal->gallery_name.'</td>
                                         <td>
 
-                                        <img src="'.url('public/uploads/gallery/'.$gal->gallery_image).'" class="img-thumbnail" width="120" height="120">
+                                        <img src="'.url('uploads/gallery/'.$gal->gallery_image).'" class="img-thumbnail" width="120" height="120">
 
                                         <input type="file" class="file_image" style="width:40%" data-gal_id="'.$gal->gallery_id.'" id="file-'.$gal->gallery_id.'" name="file" accept="image/*" />
 

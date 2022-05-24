@@ -136,7 +136,7 @@ class ProductController extends Controller
         $output['product_gallery'] = '';
         
         foreach($gallery as $key => $gal){
-            $output['product_gallery'].= '<p><img width="100%" src="public/uploads/gallery/'.$gal->gallery_image.'"></p>';
+            $output['product_gallery'].= '<p><img width="100%" src="uploads/gallery/'.$gal->gallery_image.'"></p>';
         }
 
         $output['product_name'] = $product->product_name;
@@ -144,7 +144,7 @@ class ProductController extends Controller
         $output['product_desc'] = $product->product_desc;
         $output['product_content'] = $product->product_content;
         $output['product_price'] = number_format($product->product_price,0,',','.').'VNĐ';
-        $output['product_image'] = '<p><img width="100%" src="public/uploads/product/'.$product->product_image.'"></p>';
+        $output['product_image'] = '<p><img width="100%" src="uploads/product/'.$product->product_image.'"></p>';
 
         $output['product_button'] = '<input type="button" value="Mua ngay" class="btn btn-primary btn-sm add-to-cart-quickview" id="buy_quickview" data-id_product="'.$product->product_id.'"  name="add-to-cart">';
 
@@ -210,9 +210,9 @@ class ProductController extends Controller
         $get_image = $request->file('product_image');
         $get_document = $request->file('document');
 
-        $path = 'public/uploads/product/';
-        $path_gallery = 'public/uploads/gallery/';
-        $path_document = 'public/uploads/document/';
+        $path = 'uploads/product/';
+        $path_gallery = 'uploads/gallery/';
+        $path_document = 'uploads/document/';
         //them hinh anh
         if($get_image){
 
@@ -289,13 +289,13 @@ class ProductController extends Controller
         $get_image = $request->file('product_image');
         $get_document = $request->file('document');
 
-        $path_document = 'public/uploads/document/';
+        $path_document = 'uploads/document/';
 
         if($get_image){
                     $get_name_image = $get_image->getClientOriginalName();
                     $name_image = current(explode('.',$get_name_image));
                     $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-                    $get_image->move('public/uploads/product',$new_image);
+                    $get_image->move('uploads/product',$new_image);
                     $data['product_image'] = $new_image;
                     DB::table('tbl_product')->where('product_id',$product_id)->update($data);
                     Session::put('message','Cập nhật sản phẩm thành công');
@@ -326,7 +326,7 @@ class ProductController extends Controller
     }
     public function delete_document(Request $request){
         //lay file old document 
-        $path_document = 'public/uploads/document/';
+        $path_document = 'uploads/document/';
         $product = Product::find($request->product_id);
         unlink($path_document.$product->product_file);
         $product->product_file = '';
@@ -366,7 +366,7 @@ class ProductController extends Controller
                 $meta_keywords = $value->product_slug;
                 $meta_title = $value->product_name;
                 $url_canonical = $request->url();
-                $share_images = url('public/uploads/product/'.$value->product_image);
+                $share_images = url('uploads/product/'.$value->product_image);
                 //--seo
             }
 
@@ -433,7 +433,7 @@ class ProductController extends Controller
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension;
-            $request->file('upload')->move('public/uploads/ckeditor', $fileName);
+            $request->file('upload')->move('uploads/ckeditor', $fileName);
    
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
             $url = asset('uploads/ckeditor/'.$fileName); 

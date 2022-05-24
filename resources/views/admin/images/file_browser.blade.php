@@ -54,7 +54,7 @@
 		<div class="thumbnail">
 			<ul class="file-list">
 				<li>
-					<img src="{{asset('/uploads/ckeditor/'.$file)}}" alt="thumb" title="{{asset('/public/uploads/ckeditor/'.$file)}}" width="120" height="130">
+					<img src="{{asset('/uploads/ckeditor/'.$file)}}" alt="thumb" title="{{asset('/uploads/ckeditor/'.$file)}}" width="120" height="130">
 
 				<br/>
 				<span style="color:blue">{{$file}}</span>

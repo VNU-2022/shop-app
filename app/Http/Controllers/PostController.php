@@ -60,7 +60,7 @@ class PostController extends Controller
 
             $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
 
-            $get_image->move('public/uploads/post',$new_image);
+            $get_image->move('uploads/post',$new_image);
 
             $post->post_image = $new_image;
 
@@ -88,7 +88,7 @@ class PostController extends Controller
         $post_image = $post->post_image;
 
         if($post_image){
-        	$path ='public/uploads/post/'.$post_image;
+        	$path ='uploads/post/'.$post_image;
         	unlink($path);
         }
         $post->delete();
@@ -122,13 +122,13 @@ class PostController extends Controller
         if($get_image){
         	//xoa anh cu
         	$post_image_old = $post->post_image;
-        	$path ='public/uploads/post/'.$post_image_old;
+        	$path ='uploads/post/'.$post_image_old;
         	unlink($path);
         	//cap nhat anh moi
             $get_name_image = $get_image->getClientOriginalName(); //lay ten của hình ảnh
             $name_image = current(explode('.',$get_name_image));
             $new_image =  $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/uploads/post',$new_image);
+            $get_image->move('uploads/post',$new_image);
             $post->post_image = $new_image; 
         }
 
@@ -186,7 +186,7 @@ class PostController extends Controller
             $url_canonical = $request->url();
             $cate_post_id = $p->cate_post_id;
             $post_id = $p->post_id;
-            $share_image = url('public/uploads/post/'.$p->post_image);
+            $share_image = url('uploads/post/'.$p->post_image);
             //--seo
         }
         //update views 

@@ -191,25 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </li>
                 @endrole
-              {{--   <li>
-                    <a href="{{URL::to('read_data')}}">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Google drive</span>
-                    </a>
-                </li> --}}
-                
-                 
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Slider</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="{{URL::to('/manage-slider')}}">Liệt kê slider</a></li>
-                        <li><a href="{{URL::to('/add-slider')}}">Thêm slider</a></li>
-                    </ul>
-                </li>
-                   
+
                 </li>
                  <li class="sub-menu">
                     <a href="javascript:;">
@@ -226,13 +208,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>Bình luận</span>
+                        <span>Danh mục sản phẩm</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{{URL::to('/comment')}}">Liệt kê bình luận</a></li>
+                        <li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
+                      
                     </ul>
                 </li>
-               
               
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -245,50 +228,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       
                     </ul>
                 </li>
-                 <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Bài viết</span>
-                    </a>
-                    <ul class="sub">
-                         <li><a href="{{URL::to('/add-post')}}">Thêm bài viết</a></li>
-                        <li><a href="{{URL::to('/all-post')}}">Liệt kê bài viết</a></li>
-                      
-                    </ul>
-                </li>
-               {{--   <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Video</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="{{URL::to('video')}}">Thêm video</a></li>
-                    
-                      
-                    </ul>
-                </li> --}}
-             {{--    @impersonate
-                <li>
-                   
-                    <span><a href="{{URL::to('/impersonate-destroy')}}">Stop chuyển quyền</a></span>
-                  
-                </li>
-                @endimpersonate --}}
-
-              {{--   @hasrole(['admin','author'])
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Users</span>
-                    </a>
-                    <ul class="sub">
-                         <li><a href="{{URL::to('/add-users')}}">Thêm user</a></li>
-                        <li><a href="{{URL::to('/users')}}">Liệt kê user</a></li>
-                      
-                    </ul>
-                </li>
-
-                @endhasrole --}}
              
             </ul>            </div>
         <!-- sidebar menu end-->
