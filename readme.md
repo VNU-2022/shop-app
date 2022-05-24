@@ -70,3 +70,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+##Set Up Project 
+#Requirements: 
+- composer
+- >= php 7.2 && < php 8.x (cus php 8 unsupported our laravel version (5.8) )
+- 
+After clone project, open terminal in your project and type these command below:
+1. composer update //update settings of project to fit enviroment of yours
+2. composer dump-autoload
+3. php artisan db:seed //generate database
+
