@@ -536,9 +536,6 @@ CREATE TABLE `tbl_infomation` (
 -- Đang đổ dữ liệu cho bảng `tbl_infomation`
 --
 
-INSERT INTO `tbl_infomation` (`info_id`, `info_contact`, `info_map`, `info_logo`, `slogan_logo`, `info_fanpage`) VALUES
-(1, '<ol>\r\n	<li><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\"><strong>Địa chỉ 1: 765 Phan Văn Trị, G&ograve; Vấp, Th&agrave;nh phố Hồ Ch&iacute; Minh, Việt Nam</strong></span></span></li>\r\n	<li><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\"><strong></div>');
-
 -- --------------------------------------------------------
 
 --
