@@ -530,79 +530,13 @@
             }
         })
     </script>
-    <script>
-        var usd = document.getElementById("vnd_to_usd").value;
-      paypal.Button.render({
 
-        // Configure environment
-        env: 'sandbox',
-
-        client: {
-          sandbox: 'AXrZz-zLToqfMr-uQpcv3efjJ03lkeRJZf1XkivTFGTvF1Ul7qBf6fZNauuByqW9jtni0wrygLUE8gkQ',
-          production: 'demo_production_client_id'
-        },
-        // Customize button (optional)
-        locale: 'en_US',
-        style: {
-          size: 'small',
-          color: 'gold',
-          shape: 'pill',
-        },
-
-        // Enable Pay Now checkout flow (optional)
-        commit: true,
-
-        // Set up a payment
-        payment: function(data, actions) {
-          return actions.payment.create({
-            transactions: [{
-              amount: {
-                total: `${usd}`,
-                currency: 'USD'
-              }
-            }]
-          });
-        },
-        // Execute the payment
-        onAuthorize: function(data, actions) {
-          return actions.payment.execute().then(function() {
-            // Show a confirmation message to the buyer
-            window.alert('Cảm ơn bạn đã mua hàng của chúng tôi!');
-          });
-        }
-      }, '#paypal-button');
-
-    </script>
     <div id="fb-root"></div>
 
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=2339123679735877&autoLogAppEvents=1"></script>
+	{{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=2339123679735877&autoLogAppEvents=1"></script> --}}
 
 		<!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v9.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
-      <!-- Your Chat Plugin code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="100332251915013"
-	  theme_color="#0A7CFF"
-	  logged_in_greeting="Chào bạn,shop có thể giúp gì được cho bạn?"
-	  logged_out_greeting="Chào bạn,shop có thể giúp gì được cho bạn?">
-      </div>
 	<script type="text/javascript">
         $(document).ready(function(){
 
@@ -739,14 +673,14 @@
                 old_data.push(newItem);
 
                 $('#row_compare').find('tbody').append(`
-                                                         <tr id="row_compare`+id+`">
-                                                            <td>`+newItem.name+`</td>
-                                                            <td>`+newItem.price+`</td>
-                                                            <td><img width="200px" src="`+newItem.image+`"></td>
-                                                            <td></td>
-                                                            <td><a href="`+url+`">Xem sản phẩm</a></td>
-                                                            <td><a style="cursor:pointer" onclick="delete_compare(`+id+`)">Xóa so sánh</a></td>
-                                                          </tr>
+                    <tr id="row_compare`+id+`">
+                    <td>`+newItem.name+`</td>
+                    <td>`+newItem.price+`</td>
+                    <td><img width="200px" src="`+newItem.image+`"></td>
+                    <td></td>
+                    <td><a href="`+url+`">Xem sản phẩm</a></td>
+                    <td><a style="cursor:pointer" onclick="delete_compare(`+id+`)">Xóa so sánh</a></td>
+                    </tr>
 
 
                 `);

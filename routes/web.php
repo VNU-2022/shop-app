@@ -34,20 +34,6 @@ Route::post('/tim-kiem','HomeController@search');
 Route::post('/autocomplete-ajax','HomeController@autocomplete_ajax');
 Route::post('/tim-kiem','HomeController@search');
 Route::get('/yeu-thich','HomeController@yeu_thich	');
-//Lien he trang 
-
-Route::get('/lien-he','ContactController@lien_he' );
-Route::get('/information','ContactController@information' );
-Route::get('/list-nut','ContactController@list_nut' );
-Route::get('/delete-icons','ContactController@delete_icons' );
-
-Route::get('/list-doitac','ContactController@list_doitac' );
-
-Route::post('/add-doitac','ContactController@add_doitac' );
-Route::post('/add-nut','ContactController@add_nut' );
-Route::post('/save-info','ContactController@save_info' );
-Route::post('/update-info/{info_id}','ContactController@update_info' );
-
 
 
 //Danh muc san pham trang chu
@@ -99,22 +85,6 @@ Route::get('/unactive-category-product/{category_product_id}','CategoryProduct@u
 Route::get('/active-category-product/{category_product_id}','CategoryProduct@active_category_product');
 
 Route::post('/product-tabs','CategoryProduct@product_tabs');
-
-
-//Login facebook
-Route::get('/login-facebook','AdminController@login_facebook');
-Route::get('/admin/callback','AdminController@callback_facebook');
-
-Route::get('/login-facebook-customer','AdminController@login_facebook_customer');
-Route::get('/customer/facebook/callback','AdminController@callback_facebook_customer');
-
-//Login google
-Route::get('/login-google','AdminController@login_google');
-Route::get('/google/callback','AdminController@callback_google');
-
-//login customer by google
-Route::get('/login-customer-google','AdminController@login_customer_google');
-Route::get('/customer/google/callback','AdminController@callback_customer_google');
 
 
 Route::post('/save-category-product','CategoryProduct@save_category_product');
@@ -220,21 +190,6 @@ Route::post('/update-qty','OrderController@update_qty');
 Route::post('/huy-don-hang','OrderController@huy_don_hang');
 
 
-//Delivery
-Route::get('/delivery','DeliveryController@delivery');
-Route::post('/select-delivery','DeliveryController@select_delivery');
-Route::post('/insert-delivery','DeliveryController@insert_delivery');
-Route::post('/select-feeship','DeliveryController@select_feeship');
-Route::post('/update-delivery','DeliveryController@update_delivery');
-
-//Banner
-Route::get('/manage-slider','SliderController@manage_slider');
-Route::get('/add-slider','SliderController@add_slider');
-Route::get('/delete-slide/{slide_id}','SliderController@delete_slide');
-Route::post('/insert-slider','SliderController@insert_slider');
-Route::get('/unactive-slide/{slide_id}','SliderController@unactive_slide');
-Route::get('/active-slide/{slide_id}','SliderController@active_slide');
-
 //Authentication roles
 Route::get('/register-auth','AuthController@register_auth');
 Route::get('/login-auth','AuthController@login_auth');
@@ -242,17 +197,6 @@ Route::get('/logout-auth','AuthController@logout_auth');
 
 Route::post('/register','AuthController@register');
 Route::post('/login','AuthController@login');
-
-//Gallery
-Route::get('add-gallery/{product_id}','GalleryController@add_gallery');
-Route::post('select-gallery','GalleryController@select_gallery');
-Route::post('insert-gallery/{pro_id}','GalleryController@insert_gallery');
-Route::post('update-gallery-name','GalleryController@update_gallery_name');
-Route::post('delete-gallery','GalleryController@delete_gallery');
-Route::post('update-gallery','GalleryController@update_gallery');
-
-
-
 
 //Document
 Route::get('upload_file','DocumentController@upload_file');
